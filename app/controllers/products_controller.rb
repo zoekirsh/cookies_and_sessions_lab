@@ -4,9 +4,8 @@ class ProductsController < ApplicationController
 
   def add
     @item = params[:name]
-    cart = session[:cart] ||= []
-    cart << @item 
-    cart
+    @cart = cart
+    @cart << @item 
     redirect_to root_path 
   end
 end
