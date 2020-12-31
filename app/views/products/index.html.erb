@@ -1,0 +1,18 @@
+<h1>Add a product to your cart:</h1>
+<%= form_tag products_path do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+  <%= submit_tag "Add to cart" %>
+<% end %>
+
+<h2>Here's your cart:</h2>
+<% if session[:cart]%>
+  <% session[:cart].each do |item|%>
+    <div>
+      <%= item %>
+    </div>
+  <% end %>
+  <% else %>
+  <%= "Your cart is empty right now."%>
+<% end %>
+
